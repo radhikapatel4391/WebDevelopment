@@ -1,4 +1,4 @@
-
+//Javascript code
 function Validation()
 {
 	var eno = document.getElementById("employeeCode").value;
