@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<title>Employee Salary Calcluator</title>
+<script src="SalaryCalculator.js"> </script>
+<style>
+	body
+	{
+		padding-top:50px;
+	}
+	
+	label
+	{
+		font-size:"18px";
+		color:"red";
+	}
+	
+	sup
+	{
+		color:red; 
+		font-size:14px;
+	}
+	#codep,#namep,#genderp,#basicp,#basicvp,#hrap,#hravp,#dap,#davp,#pfp,#pfvp
+	{
+		color:red;
+		display:none;
+	}
+	
+</style>
+
+</head>
+<body>
+<div class="container" id="input">
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+		<label class="control-label col-sm-2" for="Employee Code">Employee Code<sup>*</sup></label>
+		<div class="col-sm-5">
+			<input type="text" class="form-control" id="employeeCode" placeholder="Enter your Code"/><p id="codep">Please enter employee code</p>
+		</div>
+    </div>
+    
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="Name">Employee Name<sup>*</sup></label>
+		<div class="col-sm-5">          
+			<input type="text" class="form-control" id="employeeName" placeholder="Enter your Name"/><p id="namep">Please enter your name</p>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="Gen">Gender<sup>*</sup></label>
+		<div class="col-sm-8">          
+			<div class="radio-inline">
+				<label><input type="radio" name="gender" id="male"/>Male</label>
+			</div>
+			<div class="radio-inline">
+				<label><input type="radio" name="gender" id="female"/>Female</label>
+			</div>
+			<div class="radio-inline">
+				<label><input type="radio" name="gender" id="other"/>Other</label>
+			</div>
+			<p id="genderp">Please select your gender</p>
+		</div>
+    </div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="Dep">Department</label>
+			<div class="col-sm-5">          
+				<select id="department" class="form-control"/>
+					<option value="Computer and Science">Computer and Science</option>
+					<option value="Electrical Engineering">Electrical Engineering</option>
+					<option value="Materials Science and Engineering">Materials Science and Engineering</option>
+					<option value="Mechanical Engineering">Mechanical Engineering</option>
+				</select>
+			</div>
+	</div>
+	
+    <div class="form-group">        
+		<div class="col-sm-offset-2 col-sm-10">
+			<div class="checkbox">
+				<label><input type="checkbox" id="ownsVehicle"/>Owns Vehicle</label>
+			</div>
+		</div>
+    </div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="Basic">Basic<sup>*</sup></label>
+		<div class="col-sm-3">          
+			<input type="text" class="form-control" id="basic" placeholder="Enter your basic salary"><p id="basicp">Please enter your basic salary</p><p id="basicvp">Please enter number</p>
+		</div>
+    </div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="DA">DA%<sup>*</sup></label>
+		<div class="col-sm-3">          
+			<input type="text" class="form-control" id="da" placeholder="Dearly Allowance "><p id="dap">Please enter your DA%</p><p id="davp">Please enter number</p>
+		</div>
+    </div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="hra">HRA%<sup>*</sup></label>
+		<div class="col-sm-3">          
+			<input type="text" class="form-control" id="hra" placeholder="House Rent Allowance "><p id="hrap">Please enter your hra</p><p id="hravp">Please enter number</p>
+		</div>
+    </div>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="PF">PF%<sup>*</sup></label>
+		<div class="col-sm-3">          
+			<input type="text" class="form-control" id="pf" placeholder="Provident Fund "><p id="pfp">Please enter your pf</p><p id="pfvp">Please enter number</p>
+		</div>
+    </div>
+	
+	<br/>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-default" onclick="Validation()">Calculate</button>
+		<button type="clear" class="btn btn-default">Clear</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Display page-->
+
+
+<div class="container" style="display:none" id="result"> 
+<!--<form class="form-horizontal" role="form">-->
+    <div class="form-group">
+		<label class="control-label col-sm-2" for="Employee Code">Employee Code: </label>
+		<div class="col-sm-5" id="eCodeDiv">
+			
+		</div>
+    </div>
+    <br/>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="Name">Employee Name: </label>
+		<div class="col-sm-5" id="eNameDiv">          
+			
+		</div>
+	</div>
+	 <br/>
+	 
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="Dep">Department: </label>
+		<div class="col-sm-5" id="depDiv">          
+				
+		</div>
+	</div>
+	<br/>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="Veh"></label>
+		<div class="col-sm-5" id="vehDiv">          
+				
+		</div>
+	</div>
+	 <br/>
+	 
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="Basic">Basic: </label>
+		<div class="col-sm-5" id="basicDiv">          
+			
+		</div>
+    </div>
+	<br/>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" id='daLabel'></label>
+		<div class="col-sm-5" id="daDiv">          	
+		</div>
+    </div>
+	<br/>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" id='hraLabel'></label>
+		<div class="col-sm-5" id="hraDiv">           
+			
+		</div>
+    </div>
+	<br/>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" id='pfLabel'></label>
+		<div class="col-sm-5" id="pfDiv">          
+			
+		</div>
+    </div>
+	<br/>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2">PA: </label>
+		<div class="col-sm-5" id="paDiv">          
+			
+		</div>
+    </div>
+	<br/>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2">Net Salary (Basic+DA+HRA+PA-PF): </label>
+		<div class="col-sm-5" id="netSalaryDiv">          
+			
+		</div>
+    </div>
+	<br/>
+	
+	<br/>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-default" onclick="back()">Back</button>
+      </div>
+    </div>
+  <!--</form>-->
+</div>
+
+</body>
+</html>
