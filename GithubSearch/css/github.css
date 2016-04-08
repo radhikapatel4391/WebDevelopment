@@ -1,0 +1,55 @@
+	.tablecaption
+	{
+	background-color : rgba(0, 119, 179,0.6);
+	color : white;
+	font-weight: "bold";
+	height: 30px;
+	border:solid rgba(0, 119, 179,0.5) 2px;
+    border-radius:6px 6px 0em 0em;
+	}
+	table
+	{
+	
+	border-collapse:separate;
+    border:solid rgba(0, 119, 179,0.5) 2px;
+    border-radius:0em 0em 6px 6px;
+	background-color : white;
+	
+	}
+	tr
+	{
+		border: none;
+	}
+	.button
+	{
+	color:white;
+	background-color: rgba(0, 119, 179,0.1);
+	border:solid rgb(0, 119, 179) 1px;
+	border-radius:2px;
+	font-weight: normal;
+	}
+  
+	a
+	{
+		color:blue;
+	}
+	a:hover
+	{
+		color:black;
+	}
+	.searchBox
+	{	
+		width: 400px;
+		height: 45px;
+		position: absolute;
+		top: 40%;
+		left:25%;
+		background: rgba(128, 128, 128, 0.1);
+	}
+	.searchButton
+	{	
+		left: 55%;
+		top: 40%;
+		height: 45px;
+		position: absolute;
+	}

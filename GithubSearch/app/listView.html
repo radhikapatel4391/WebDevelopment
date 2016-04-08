@@ -1,0 +1,21 @@
+<div class="row" >
+		<div class="col-sm-6">
+			<br/>
+			<table class="table">
+			<caption class="tablecaption">&nbsp User List</caption>
+				<tr ng-repeat="eobj in vm.userLog ">
+					<td><a ng-href = {{eobj.html_url}}>{{eobj.login}}</a></td>
+				</tr>
+			</table>				
+		</div>
+		
+		<div class="col-sm-6">
+			<br/>
+			<table class="table table-responsive">
+			<caption class="tablecaption">&nbsp Repository List</caption>
+				<tr ng-repeat="eobj in vm.repoLog ">
+					<td><a ng-href = {{eobj.html_url}}>{{eobj.full_name}}</a></td>
+				</tr>
+			</table>				
+		</div>
+	</div>
