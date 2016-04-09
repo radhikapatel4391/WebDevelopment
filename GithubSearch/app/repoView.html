@@ -1,0 +1,60 @@
+<br/>
+<div class="container">    
+<div class="row well">
+	
+		<div class="col-sm-3">
+			<h3>{{vm.specRepo.full_name}}</h3>
+		</div>
+		<div class="col-sm-6 ">
+		</div>
+			<div class="col-sm-1 ">
+			<button><span class="glyphicon glyphicon-eye-open"></span>Watch</button>{{vm.specRepo.watchers}}
+			
+			</div>
+			<div class="col-sm-1 ">
+				<button><span class="glyphicon glyphicon-star"></span>Star</button>{{vm.specRepo.stargazers_count}}
+			</div>
+			<div class="col-sm-1 ">
+				<button><span class="glyphicon glyphicon-pencil"></span>Fork</button>{{vm.specRepo.forks}}
+			</div>
+		
+		
+</div>
+<div class="row well">
+	
+	<div class="col-sm-8 ">
+	<h3 class="text-info">Description</h3>
+	{{vm.specRepo.description}}
+	</div>
+	<div class="col-sm-4">
+		<p>Last Modified {{vm.specRepo.updated_at | date:'medium'}}</p>
+		<p>Created On {{vm.specRepo.created_at | date:'medium'}}</p>
+	</div>
+	
+</div>
+
+<div class="row well">
+	
+	<div class="col-sm-1 ">
+	<img ng-src="{{vm.specRepo.owner.avatar_url}}" class="img-thumbnail"  width = 50px; height=50px; alt="{{vm.specRepo.login}}">
+	</div>
+	<div class="col-sm-1 ">
+	<p class="text-info">{{vm.specRepo.owner.login}}</p>
+	</div>
+	<div class="col-sm-6 ">
+	</div>
+	<div class="col-sm-2 ">
+	<a ng-href="{{vm.specRepo.owner.followers_url}}">Followers</a>
+	</div>
+	<div class="col-sm-2 ">
+	<a ng-href="{{vm.specRepo.owner.following_url}}">Following</a>
+	</div>
+	
+</div>	
+	
+	
+
+
+
+</div>
+	

@@ -19,23 +19,24 @@
 <div ng-controller = "gitHubSearch as vm">
 
 <div class="container">
-	<div class="row" style="margin: auto;" >
+	<div class="row" style="width: 85%; margin: 0 auto;" >
 		<br/>
 		<br/>
 		<form name="myForm">
-		<input type="text" name="myName" ng-model = "vm.searchText" ng-class = "searchBox" ng-keyup ="vm.searchGithub();" required>
-		<button class = " btn btn-info" ng-click = "vm.searchButton();"><a href="#listView">search</a></button>
+		<input type="text" name="myName" ng-model = "vm.searchText" ng-class = "vm.searchBoxClass" ng-keyup ="vm.searchGithub();" required>
+		<button ng-class = "vm.searchButtonClass" ng-click = "vm.searchButton();" > <a href="#listView">search</a></button>
 		</form>
 	</div>
-	<div ng-hide = "myForm.myName.$invalid">
+	
 	<div ng-view></div>
+<!--
+	<div class="row">
+	<footer class="container-fluid text-center">
+	<p>Footer Text</p>
+	</footer>
 	</div>
+	-->
 </div>
-
-
-
-
-
 
 </div>
 </body>

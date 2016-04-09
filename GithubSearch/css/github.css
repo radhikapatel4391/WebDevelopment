@@ -3,7 +3,9 @@
 	background-color : rgba(0, 119, 179,0.6);
 	color : white;
 	font-weight: "bold";
-	height: 30px;
+	font-size:20px;
+	text-align: center;
+	height: 40px;
 	border:solid rgba(0, 119, 179,0.5) 2px;
     border-radius:6px 6px 0em 0em;
 	}
@@ -20,22 +22,34 @@
 	{
 		border: none;
 	}
-	.button
+	.defaultButton
 	{
-	color:white;
-	background-color: rgba(0, 119, 179,0.1);
-	border:solid rgb(0, 119, 179) 1px;
-	border-radius:2px;
-	font-weight: normal;
+		color:white;
+		background-color: rgb(0, 64, 128);
+		border: none;
+		border-radius: 4px;
+		font-weight: normal;
+		text-decoration: none;
+		width: 80px;
+		height: 35px;
+		font-size: 24px;
+		position:relative;
+		left: 70%;
 	}
   
-	a
+	button a:link
 	{
+		color:white;
+		
+	}
+	a{
 		color:blue;
 	}
+	
 	a:hover
 	{
 		color:black;
+		text-decoration: none;
 	}
 	.searchBox
 	{	
@@ -44,12 +58,27 @@
 		position: absolute;
 		top: 40%;
 		left:25%;
-		background: rgba(128, 128, 128, 0.1);
+		background: white;
+	}
+	.defaultSerchBox 
+	{
+		width: 550px;
+		height: 35px;
+		position: absolute;
+		background: white;
 	}
 	.searchButton
 	{	
-		left: 55%;
+		left: 60%;
 		top: 40%;
+		width: 100px;
 		height: 45px;
 		position: absolute;
+		color:white;
+		background-color: rgba(0, 64, 128,0.9);
+		border: none;
+		border-radius: 6px;
+		font-weight: normal;
+		text-decoration: none;
+		font-size: 24px;
 	}
