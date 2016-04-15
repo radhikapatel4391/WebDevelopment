@@ -1,0 +1,22 @@
+<form class="form-horizontal" name="proForm" novalidate>
+    <legend>
+        Product Price Details
+    </legend>
+
+    <div class="form-group"
+         ng-class="{'has-error':proForm.inputHRA.$invalid &&
+                                    proForm.inputTAX.$dirty}"   >
+        <label for="inputTAX" class="col-md-2 control-label">TAX %</label>
+        <div class="col-md-2">
+            <input id="inputTAX" name="inputTAX"
+                   type="text"
+                   ng-model="vm.product.tax" class="form-control"
+                   ui-mask="99999.99 (required)" required/>
+        </div>
+            <span class="help-block has-error"
+                  ng-show="proForm.inputTAX.$invalid">
+                  TAX required
+            </span>
+    </div>
+    
+</form>

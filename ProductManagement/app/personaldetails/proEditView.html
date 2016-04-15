@@ -1,0 +1,18 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        {{vm.title}}
+    </div>
+    <div class="panel-body">
+        <div >
+            <a ui-sref=".personal"
+               ui-sref-active="active" class="btn btn-primary">
+                Product Information
+            </a>
+            <a ui-sref=".salary"
+               ui-sref-active="active" class="btn btn-primary">
+                Price Details
+            </a>
+        </div>
+        <div ui-view></div>
+    </div>
+</div>

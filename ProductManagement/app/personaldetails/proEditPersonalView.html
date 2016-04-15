@@ -1,0 +1,61 @@
+<form name="proForm" class="form-horizontal">
+    <fieldset>
+        <legend>Product Information</legend>
+        <div class="form-group"
+             ng-class="{'has-error':proForm.inputProCode.$invalid &&
+                                    proForm.inputProCode.$dirty}"   >
+            <label for="inputProCode" class="col-md-2 control-label">Product Code</label>
+            <div class="col-md-2">
+            <input id="inputProCode" name="inputProCode"
+                   type="text"
+                    ng-model="vm.product.pcode" class="form-control"
+                    ui-mask="A-9999 (required)" required/>
+            </div>
+            <span class="help-block has-error"
+                  ng-show="proForm.inputProCode.$invalid">
+                  Code required
+            </span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':proForm.inputProName.$invalid &&
+                                                       proForm.inputProName.$dirty}" >
+            <label for="inputProName" class="col-md-2 control-label">Product Name</label>
+            <div class="col-md-4">
+            <input id="inputProName" name="inputProName"
+                   type="text" placeholder="Product Name (required)"
+                   ng-model="vm.product.pname" class="form-control" required ng-minlength="3"/>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="ProForm.inputProName.$error.required">
+                  Product name required
+                </span>
+                <span ng-show="proForm.inputProName.$error.minlength">
+                  Product name must me more than 3 characters
+                </span>
+
+            </span>
+
+        </div>
+
+        
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <span>
+                    <button class="btn btn-primary"
+                            style="width:80px;margin-right: 10px"
+                            ng-disabled="proForm.$invalid"
+                            ng-click="vm.submit()">Save
+                    </button>
+                </span>
+                <span>
+                    <button class="btn btn-default"
+                            style="width:70px"
+                            ng-click="vm.cancel()">Cancel
+                    </button>
+                </span>
+
+            </div>
+        </div>
+
+    </fieldset>
+</form>

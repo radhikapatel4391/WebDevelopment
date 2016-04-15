@@ -24,7 +24,7 @@
     <table class="table">
 			<caption class="tablecaption">Repository</caption>
 				<tr ng-repeat="eobj in vm.specUserRepoLog ">
-					<td><a ng-href="{{eobj.html_url}}">{{eobj.full_name}}</a></td>
+					<td><a ng-href="#repoView" ng-click ="vm.repoDetail(eobj.url);">{{eobj.full_name}}</a></td>
 				</tr>
 			</table>
 	</div>

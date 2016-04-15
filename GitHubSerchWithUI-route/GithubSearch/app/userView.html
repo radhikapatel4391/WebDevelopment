@@ -1,0 +1,45 @@
+<br/>
+<div class="container">    
+<div class="row">
+    <div class="col-sm-3 well">
+      <div class="well">
+           <img ng-src="{{vm.specUser.avatar_url}}" class="img-thumbnail"  width = 150px; height=150px; alt="{{vm.specUser.login}}">
+      </div>
+      <div class="well">
+        
+        <p>
+          <span class="glyphicon glyphicon-globe "></span><h4 class="text-primary" style="font-weight: 500;">{{vm.specUser.company}}</h4>
+          <span class="glyphicon glyphicon-home "></span><h4  class="text-primary" style="font-weight: 500;" >{{vm.specUser.location}}</h4>
+          <span class="glyphicon glyphicon-book "></span><h4  class="text-primary" style="font-weight: 500;" ><a href="{{vm.specUser.blog}}">{{vm.specUser.blog}}</a></h4>
+          <span class="glyphicon glyphicon-time "></span><h4  class="text-primary" style="font-weight: 500;" >Joined on {{vm.specUser.created_at | date:'MMMM dd,yyyy'}}</h4>
+        </p>
+      </div>
+      <div>
+	  <h1 class = "text-primary" style="font-weight: bold;">{{vm.specUser.followers}}</h1>Folloers
+	  <h1 class = "text-primary" style="font-weight: bold;">{{vm.specUser.following}}</h1>Following
+	  </div>
+	  </div>
+    <div class="col-sm-7">
+    <div class="well">
+    <table class="table">
+			<caption class="tablecaption">Repository</caption>
+				<tr ng-repeat="eobj in vm.specUserRepoLog ">
+				
+					<td><a ui-sref="repoView" ng-click ="vm.repoDetail(eobj.url);">{{eobj.full_name}}</a></td>
+				</tr>
+			</table>
+	</div>
+	</div>
+    <div class="col-sm-2 well">
+            
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
