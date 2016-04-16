@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>RandomGrid</title>
+    <style>
+        button{
+            width : 50px;
+            margin : 5px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <br/>
+    <br/>
+    <form class="form-horizontal" >
+        <div class="form-group">
+            <label class="label label-info">Select your Grid Range</label>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Min</label>
+            <div class="col-sm-5">
+                <input class="form-control" type="number" min="1" value = '1' id="minid">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Max</label>
+            <div class="col-sm-5">
+                <input class="form-control" type="number" min="1" value = '5' id="maxid">
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" onclick="randomGrid();">Make Random Grid</button>
+        </div>
+        <div class="form-group">
+            <label class="label label-default">Your Random Gird is <span style= "font-size: larger; color:red;" id="gridx"></span>by<span style= "font-size: larger; color:red;" id="gridy"></span></label>
+        </div>
+        <div id="gridSection" class="form-group">
+
+        </div>
+        <button class="btn btn-default" id="start" onclick="downBtnValue();" style="width : auto;">Game Start</button>
+    </form>
+</div>
+</body>
+<script src="script.js"></script>
+</html>

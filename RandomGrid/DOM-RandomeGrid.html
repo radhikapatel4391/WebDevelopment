@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RandomGrid</title>
+    <style>
+        button{
+            width : 50px;
+            margin : 5px;
+        }
+    </style>
+
+</head>
+<body style="align-content: center; margin: auto; width: 50%;">
+<br/>
+<br/>
+<div>
+    <h4>Select your Grid Range</h4>
+    Min:<input class="form-control" type="number" min="1" value = '1' id="minid">
+    Max:<input class="form-control" type="number" min="1" value = '5' id="maxid"><br/><br/>
+    <button style="width : auto;" onclick="randomGrid();">Make Random Grid</button>
+    <button  id="start" onclick="downBtnValue();" style="width : auto;">Game Start</button>
+    <br/>
+</div>
+<div id="gridSection">
+    <h5>Random Gird is <span style= "font-size: large; color:red;" id="gridx"></span> by <span style= "font-size: large; color:red;" id="gridy"></span></h5>
+</div>
+
+
+</body>
+<script src="script.js"></script>
+</html>

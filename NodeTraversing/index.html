@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Assignment1</title>
+</head>
+<body>
+<div id="mainDiv">
+
+    <section class="section1">
+        <span style="color:darkorange">This is First section in main div </span>
+        <div> this is div child 1 of main div </div>
+        <div> this is div child 2 of main div </div>
+        <div> this is div child 3 of main div</div>
+        <button id="button1">Button 1</button>
+
+        <br/>
+        <br/>
+    </section>
+
+    <section>
+        <span style="color:darkorange">This is Second section in main div </span>
+        <div> this is div child 1 of main div </div>
+        <button id="button2">Button 2</button>
+        <br/>
+    </section>
+
+</div>
+<br/>
+<br/>
+<div>
+    <button onclick="SectionFind();">Find Section</button>
+    <button onclick="getSetAttribute();">GET/SET Attribute</button>
+    <button onclick="divBtnFind();">Find Div and button in section</button>
+    <button onclick="changeSpan();">change span by btn</button>
+    </div>
+<div id="result" style="color: blue">
+
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

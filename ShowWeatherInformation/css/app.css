@@ -1,0 +1,33 @@
+table
+{
+
+    border-collapse:separate;
+    border:solid rgb(0, 119, 179) 2px;
+    border-radius:6px 6px 6px 6px;
+    background-color : white;
+    color:black;
+
+}
+body{
+    background-color:#bfbfbf;
+}
+form {
+    background-color: #999966;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px #ccc;
+    color: white;
+    font-size: 16px;
+    padding: 30px 20px;
+}
+form legend {
+    color: white;
+    font-size: 42px;
+    font-family: calibri;
+    font-weight: normal;
+    line-height: 1;
+    text-shadow: 0 3px 0 rgba(0,0,0,0.1);
+}
+.chart{
+    width: 100%;
+    height:300px;
+}

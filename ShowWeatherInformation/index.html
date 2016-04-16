@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="panel panel-primary">
+    <div class="panel-body">
+        <form>
+            <label>City Name</label>
+            <input class="form-control" id = "cityName" type = "text" value="London,uk"/><br/><br/>
+            <input class="btn btn-primary" type= "button" onclick = "addWather();"  value="Add Weather Data"/>
+            <br/>
+            <br/>
+            <table class="table" id = "weatherInfoTable">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="selectAll"> Select All </th>
+                        <th>Name </th>
+                        <th>Description </th>
+                    </tr>
+                </thead>
+                <tbody id="tableBodyId">
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" onclick = "deleteForTableFunction();">Delete</button>
+
+        </form>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

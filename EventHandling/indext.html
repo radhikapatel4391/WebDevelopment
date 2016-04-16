@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EventHandling1</title>
+</head>
+<body style="margin: auto; width: 50%;">
+<br/>
+<br/>
+<div id="firstRowDiv">
+  <button> First </button>
+  <button> Second </button>
+  <button> Third </button>
+  <button> Fourth </button>
+  <button> Fifth </button>
+</div>
+
+<div id="secondRowDiv">
+  <button>
+  It should not alert
+  </button>
+</div>
+<br/>
+<br/>
+<p style="color : red; font-size: x-small;" >Before Selecting Task refresh the page</p>
+<div>
+  <button onclick = "firstRow();" title="Event Delegation!"> FirstRow_EventDelegation </button>
+  <button onclick = "stopPropogationTask();"  title="have a click event on first row div and its button and when button is clicked only button message should come"> StopPropogation</button>
+  <button onclick = "indexAlert();" title="alert only the index"> ButtonIndex  </button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
