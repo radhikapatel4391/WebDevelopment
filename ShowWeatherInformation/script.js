@@ -8,7 +8,10 @@ var selectAll = document.getElementById("selectAll");
 var selectedRows=[];
 
 
+function removeValue() {
 
+    document.getElementById("cityName").value = "";
+}
 //This function make ajax call for data based on url
 function makeAjaxCall(url, methodType){
     var promiseObj = new Promise(function(resolve, reject){
