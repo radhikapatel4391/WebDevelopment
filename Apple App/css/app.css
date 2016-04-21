@@ -1,15 +1,17 @@
-table
-{
 
-    border-collapse:separate;
-    border:solid rgb(0, 119, 179) 2px;
-    border-radius:6px 6px 6px 6px;
-    background-color : white;
-    color:black;
-
+td {
+    text-align: left;
+    vertical-align: bottom;
 
 }
 
+
+
+
+td {
+    height: 50px;
+    vertical-align: bottom;
+}
 body{
     background-color:#bfbfbf;
 }
