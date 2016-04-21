@@ -36,7 +36,7 @@ function addSortedDataInTable(tableData)
    // var len = tableData.length;
     tableData.sort();
     for(var i=0; i < len; i++) {
-        createRowforwatherInfoTable(tableData[i][1],tableData[i][0]);
+        createRowforAppTable(tableData[i][1],tableData[i][0]);
     }
 }
 function searchDataInTable() {
@@ -47,7 +47,7 @@ function searchDataInTable() {
     for(var i=0; i < len; i++) {
         var str = tableData[i][0].toLowerCase();
         if(str.search(serchBoxValue) > -1)
-        {	
+        {
             createRowforAppTable(tableData[i][1],tableData[i][0] );
         }
         
