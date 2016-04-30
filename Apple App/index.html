@@ -6,19 +6,33 @@
     <link href="css/app.css" rel="stylesheet"/>
     <title>Apple App</title>
 </head>
-<body style='width:50%;  margin: auto; '>
+<body style='width:80%;  margin: auto; '>
 <div class="panel panel-primary">
     <div class="panel-body">
         <h3>App Demo</h3>
-        <input type="text" id="serchBox" onkeydown = "searchDataInTable();" class="form-control" value="Search Apps" style='display:block;width:auto'>
-        <br/>
+        <div id="container" style="min-width: 310px; height: 300px; max-width: 400px; margin: 0 auto"></div>
+        <div class="row">
+            <input type="text" id="searchBox" onkeydown="searchResult(this);" class="form-control col-sm-2" value=" " style='display:block;width:auto'>
+            <select id = "category" class="form-control col-sm-2" onchange="searchResult(this);" style='display:block;width:auto'>
+                </select>
+            <select id= "price" class="form-control col-sm-2" onchange="searchResult(this);" style='display:block;width:auto'>
+            </select>
+            <select id= "chart" class="form-control col-sm-2" onchange="chartData(this.value)" style='display:block;width:auto'>
+                <option  value = ' '>Chart</option>
+                <option id= "ChartCategory" value = 'Category'>Category</option>
+                <option id= "ChartPrice" value = 'Price'>Price</option>
+            </select>
+        </div >
+        <div class="row">
         <table id="gameTable">
-
             </table>
+            </div>
 
         </div>
 
     </div>
+<script src="http://code.highcharts.com/adapters/standalone-framework.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

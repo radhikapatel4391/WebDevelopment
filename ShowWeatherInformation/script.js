@@ -139,6 +139,7 @@ function makeAjaxCall(url, methodType){
                 if (xhr.status === 200){
                     var resp = xhr.responseText;
                     var respJson = JSON.parse(resp);
+                    console.log(respJson);
                     resolve(respJson);
                 } else {
                     reject(xhr.status);
