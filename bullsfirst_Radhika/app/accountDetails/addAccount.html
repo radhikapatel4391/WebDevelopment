@@ -1,0 +1,28 @@
+<div id="content">
+
+        <div class="header">
+            <strong>Add Account</strong>
+        </div>
+
+        <div class="formLayout">
+            <form name="addAccountForm">
+                <label><sup>*</sup>Account Name:</label>
+                <input type="text" ng-model="vm.account.name" name="accountname" placeholder="Account Name" required><br>
+                <label><sup>*</sup>Market Value:</label>
+                <input type="number" ng-model="vm.account.marketValue" name="marketvalue" placeholder="Market Value" required><br>
+                <label>Cash:</label>
+                <input type="number" name = "cash" ng-model="vm.account.cash" placeholder="Cash value" ><br>
+                <label><sup>*</sup>Legend:</label>
+                <input type="text"  name = "legend" ng-model="vm.account.legend" placeholder="Colour for chart" required><br>
+                <button ng-click="vm.submit()" ng-disabled="addAccountForm.accountname.$invalid ||
+                        addAccountForm.marketvalue.$invalid || addAccountForm.legend.$invalid  ">Submit</button>
+                <button ng-click="vm.cancel()">Cancel</button>
+
+
+            </form>
+        </div>
+
+</div>
+
+
+

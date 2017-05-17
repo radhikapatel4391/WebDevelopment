@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<title>StudentResult</title>
+<script>
+
+function resultCalculation()
+{
+	var name = document.getElementById("studentName").value;
+	var phy = Number(document.getElementById("phy").value);
+	var che = Number(document.getElementById("che").value);
+	var maths = Number(document.getElementById("math").value);
+	var total = 0;
+	var pers;
+	var result="";
+	total = phy + che + maths;
+	if(phy >= 40 && che >= 40 && maths >= 40)
+	{
+		pers = total / 3;
+		result = "PASS";
+		if(pers >= 80)
+		{
+			g = "A+";	
+		}
+		else if(pers >= 70)
+		{
+			g = "A";
+		}
+		else if(pers >= 60)
+		{
+			g = "B";
+		}
+		else
+		{
+			g = "C";
+		}
+		pers = pers.toPrecision(4);
+		document.getElementById("persDiv").innerHTML = pers + '%';
+	}
+	else
+	{	pers = "-";
+		result = "FAIL";
+		g = "F";
+		document.getElementById("persDiv").innerHTML = pers ;
+	}
+
+
+	//display page
+	
+	document.getElementById("studentNameDiv").innerHTML = name;
+	document.getElementById("phyDiv").innerHTML = phy;
+	document.getElementById("cheDiv").innerHTML = che;
+	document.getElementById("mathDiv").innerHTML = maths;
+	document.getElementById("totalDiv").innerHTML = total;
+	
+	document.getElementById("gradeDiv").innerHTML = g;
+	document.getElementById("resultDiv").innerHTML = result;
+	document.getElementById("input").style.display = "none";
+	document.getElementById("result").style.display = "block";
+}
+function back()
+{
+	document.getElementById("input").style.display = "block";
+	document.getElementById("result").style.display = "none";
+}
+</script>
+<style>
+	body
+	{
+		padding-top:50px;
+	}
+	
+	label
+	{
+		font-size:"18px";
+		color:"red";
+	}
+	
+	sup
+	{
+		color:red; 
+		font-size:14px;
+	}
+</style>
+
+</head>
+<body>
+<div class="container" id="input">
+<form class="form-horizontal" role="form">
+    <div class="form-group">
+		<label class="control-label col-sm-3" for="studentName">Student Name</label>
+		<div class="col-sm-5">
+			<input type="text" class="form-control" id="studentName" placeholder="Enter your Name"/>
+		</div>
+    </div>
+
+    
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="phy">Physics</label>
+		<div class="col-sm-3">          
+			<input type="text" class="form-control" id="phy"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="che">Chemistry</label>
+		<div class="col-sm-3">          
+			<input type="text" class="form-control" id="che"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="math">Maths</label>
+		<div class="col-sm-3">          
+			<input type="text" class="form-control" id="math"/>
+		</div>
+	</div>
+	<!--<div class="form-group">
+		<label class="control-label col-sm-2" for="total">Total</label>
+		<div class="col-sm-3">          
+			<input type="text" class="form-control" id="total"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="pers">%</label>
+		<div class="col-sm-3">          
+			<input type="text" class="form-control" id="pers"/>
+		</div>
+	</div>
+	-->
+	<br/>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-default" onclick="resultCalculation()">ShowResult</button>
+		<button type="clear" class="btn btn-default">Clear</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Display page-->
+<div class="container" style="display:none" id="result"> 
+<div class="form-group">
+		<label class="control-label col-sm-3" for="studentNameDiv">Student Name</label>
+		<div class="col-sm-5" id="studentNameDiv">
+			
+		</div>
+    </div>
+	<br/>
+    
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="phyDiv">Physics</label>
+		<div class="col-sm-3" id="phyDiv">          
+			
+		</div>
+	</div>
+	<br/>
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="cheDiv">Chemistry</label>
+		<div class="col-sm-3" id="cheDiv">          
+			
+		</div>
+	</div>
+	<br/>
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="mathDiv">Maths</label>
+		<div class="col-sm-3" id="mathDiv">          
+			
+		</div>
+	</div>
+	<br/>
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="totalDiv">Total</label>
+		<div class="col-sm-3" id="totalDiv">          
+			
+		</div>
+	</div>
+	<br/>
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="persDiv">Percentage</label>
+		<div class="col-sm-3" id="persDiv">          
+			
+		</div>
+	</div>
+	<br/>
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="gradeDiv">Grade</label>
+		<div class="col-sm-3" id="gradeDiv">          
+			
+		</div>
+	</div>
+	<br/>
+	<div class="form-group">
+		<label class="control-label col-sm-3" for="resultDiv">Result</label>
+		<div class="col-sm-3" id="resultDiv">          
+			
+		</div>
+	</div>
+
+	<br/>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-default" onclick="back()">Back</button>
+		
+      </div>
+    </div>
+</div>
+</body>
+</html>

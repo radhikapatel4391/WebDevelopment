@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Changing text properties</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+<style>
+body
+{
+	padding: 50px;
+}
+.textb 
+{
+	border: solid black 1px;
+	width:45%;
+}
+.ltsp
+{
+      word-spacing: 21px;
+}
+.button
+{
+	width:80px !important;
+}
+</style>
+
+<script>
+function setAlignment(str)
+{
+	if(str == 'Right')
+	{	
+		document.getElementById("mtext").innerHTML = "This text is Right aligned!!!";
+		document.getElementById("mtext").style.textAlign = "right";
+	}
+	else if(str == 'Center')
+	{
+		document.getElementById("mtext").innerHTML = "This text is Center aligned!!!";
+		document.getElementById("mtext").style.textAlign = "center";
+	}
+	else
+	{	
+		document.getElementById("mtext").innerHTML = "This text is Left aligned!!!";
+		document.getElementById("mtext").style.textAlign = "left";
+	}
+}
+
+function setFontWeight()
+{
+	if(document.getElementById("bld").checked)
+	{
+		document.getElementById("mtext").style.fontWeight = "bold";
+	}
+	else
+	{
+		document.getElementById("mtext").style.fontWeight = "normal";
+	}
+}
+
+function setFontStyle(estr)
+{
+	if(document.getElementById("itl").checked)
+	{
+		document.getElementById("mtext").style.fontStyle = "italic";
+	}
+	else
+	{
+		document.getElementById("mtext").style.fontStyle = "normal";
+	}
+}
+
+function setColor(color)
+{
+	document.getElementById("mtext").style.color = color;
+}
+
+function setSize(size)
+{
+	document.getElementById("mtext").style.fontSize = size+"px";
+}
+</script>
+
+</head>
+<body>
+<div class="container">
+<form class="form-horizontal" role="form">
+
+<div class="textb row">
+<div class="col-sm-12">
+<div id="mtext" style="color:red;font-size:10px;">This text is Left aligned!!!</div>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+
+<!--<div class="form-group">-->
+<div class="row ltsp">
+<div class="col-sm-4">
+<input class="button" type="button" value="Left" id="left" onclick="setAlignment(this.value)"/>
+<input class="button" type="button" value="Center" id="center" onclick="setAlignment(this.value)"/>
+<input class="button" type="button" value="Right" id="right" onclick="setAlignment(this.value)"/>
+</div> <!--col-sm-5-->
+<div class="col-sm-1">
+<input type="checkbox" value="bold" name="bold" id="bld" onchange='setFontWeight()'>Bold<br/>
+<input type="checkbox" value="italic" name="italic" id="itl" onchange='setFontStyle()'>Italic
+</div>
+</div><!--row close-->
+<!--</div>--form group close-->
+
+<!--<div class="form-group">-->
+<br/>
+<br/>
+<div class="row ltsp">
+<div class="col-sm-3">
+  <input class="radio-inline" type="radio" name="color" value="red" checked onclick="setColor('red')">Red
+  <input class="radio-inline" type="radio" name="color" value="blue" onclick="setColor('blue')">Blue
+  <input class="radio-inline" type="radio" name="color" value="green" onclick="setColor('green')">Green
+  </div><!--closm close-->
+  <div class="col-sm-2" style="word-spacing: 7px; !important">
+  Size 
+  <select style="width:40px;" onchange='setSize(this.value)'>
+  	<option value="10">10</option>
+	<option value="20">20</option>
+	<option value="30">30</option>
+	<option value="40">40</option>
+	<option value="50">50</option>
+  </select>
+  </div>
+  </div><!--row close-->
+<!--</div>formgroup close-->
+
+
+
+</form>
+</div><!--container-->
+</body>
+</html>

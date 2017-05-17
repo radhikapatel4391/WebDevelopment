@@ -1,0 +1,55 @@
+<div id="content">
+    <div class="left-section">
+        <div class="header">
+            <strong>Accounts</strong>
+
+            <div class="actions">
+                <button><a ui-sref="addAccount">Add Account</a></button>
+                <button>Refresh</button>
+            </div>
+        </div>
+
+        <table class="formTable">
+            <tr>
+                <th>NAME</th>
+                <th  ng-click="vm.reverceMe()">MARKET VALUE <span ng-class="vm.getClass"></span></th>
+                <th>CASH</th>
+                <th>LEGEND</th>
+            </tr>
+
+            <tr ng-repeat="row in vm.accounts | orderBy : 'marketValue' : vm.reverse">
+                <td>{{ row.name | uppercase }}</td>
+                <td>{{ row.marketValue | currency }}</td>
+                <td>{{ row.cash | currency }}</td>
+                <td>
+                    <div class="legend" style="background-color: {{ row.legend }}"></div>
+                </td>
+            </tr>
+
+            <tr class="totals">
+                <td></td>
+                <td>
+                    <strong>{{ vm.marketValue | currency }}</strong>
+                </td>
+                <td>
+                    <strong>{{ vm.cash | currency }}</strong>
+                </td>
+                <td></td>
+            </tr>
+
+
+        </table>
+    </div>
+
+    <div class="right-section">
+        <div
+                data-ac-chart="'pie'"
+                data-ac-data="vm.data"
+                data-ac-config="vm.config"
+                class="chart">
+        </div>
+
+        <div class="help-label">Click on an account to view positions</div>
+    </div>
+
+</div>

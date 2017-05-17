@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<title>Calcluator</title>
+<script>
+function calculation(operation) 
+{
+	var number1 = Number(document.getElementById("num1").value);
+	var number2 = Number(document.getElementById("num2").value);
+	
+	switch (operation)
+	{
+		case "+":
+			console.log("case1");
+			document.getElementById("ans").value = (number1 + number2);
+			break;
+		
+		case "-":
+			document.getElementById("ans").value = (number1 - number2);
+			break;
+
+		case "*":
+			document.getElementById("ans").value = (number1 * number2);
+			break;
+
+		case "/":
+			document.getElementById("ans").value = (number1 / number2);
+			break;
+	}
+}
+</script>
+<style>
+	body
+	{
+		padding-top:50px;
+	}
+	
+	label
+	{
+		font-size:"18px";
+		color:"red";
+	}
+	
+	sup
+	{
+		color:red; 
+		font-size:14px;
+	}
+</style>
+
+</head>
+<body>
+<div class="container" id="input">
+<form class="form-horizontal" role="form">
+
+    <div class="form-group">
+		<label class="control-label col-sm-2" for="num1">Number1 :</label>
+		<div class="col-sm-5">
+			<input type="text" class="form-control" name="num1" id="num1"/>
+		</div>
+    </div>
+	<br/>
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="num2">Number2 :</label>
+		<div class="col-sm-5">
+			<input type="text" class="form-control" name="num2" id="num2"/>
+		</div>
+    </div>
+	<br/>
+	
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="ans"></label>
+		<div class="col-sm-5">
+			<input type="button" value="+" id="add" onclick="calculation('+')">
+			<input type="button" value="-" id="sub" onclick="calculation('-')">
+			<input type="button" value="*" id="mul" onclick="calculation('*')">
+			<input type="button" value="/" id="div" onclick="calculation('/')">
+		</div>
+    </div>	
+	
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="ans">Answer :</label>
+		<div class="col-sm-5">
+			<input type="text" class="form-control" name="ans" id="ans"/>
+		</div>
+    </div>
+	<br/>
+	
+</form>
+</div>
+</body>
+</html>

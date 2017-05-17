@@ -1,0 +1,177 @@
+body {
+    font-size: 14px;
+    font-family: "Helvetica Neue", "Arial", "sans-serif";
+
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.arrow-up{
+    position: relative;
+    width:0;
+    height:0;
+    bottom:14px;
+    left:5px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 14px solid orange;
+}
+.arrow-down{
+    position: relative;
+    width:0;
+    height:0;
+    top:14px;
+    left:5px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 14px solid orange;
+}
+button {
+    width: 100px;
+    background: orange;
+    border: 1px solid darkred;
+    margin-right: 10px;
+    box-shadow: 1px 1px 3px #333;
+    height: 25px;
+    font-weight: bold;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+}
+table td {
+    padding: 5px;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    border: none;
+}
+
+/* Header */
+#header {
+    display: flex;
+    background: orange;
+    padding: 30px 20px;
+}
+
+#header .logo h1 {
+    margin: 3px 0;
+}
+
+#header .logo .subtitle {
+    font-size: 0.8rem;
+}
+
+#header .actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+#header .actions button {
+}
+
+#content {
+    display: flex;
+    margin-top: 20px;
+}
+/* Left Section */
+
+.left-section {
+    flex: 1;
+    margin-right: 20px;
+}
+.left-section .header {
+    display: flex;
+    height: 30px;
+}
+
+.left-section .header button {
+    height: 25px;
+}
+.left-section .header > .actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+table th {
+    background: #ccc;
+    padding: 5px;
+}
+.totals td {
+    border-top: 3px solid #ccc;
+}
+
+.legend {
+    width: 30px;
+    height: 16px;
+}
+
+/* Right Section */
+.right-section {
+    width: 350px;
+    background: #ccc;
+}
+.right-section .chart {
+    height: 300px;
+
+}
+
+.right-section .help-label {
+    padding: 10px;
+}
+.formLayout
+{
+    background: #ccc;
+    border: solid 1px #a1a1a1;
+    padding: 10px;
+    width: 500px;
+    font-size: 14px;
+    font-family: "Helvetica Neue", "Arial", "sans-serif";
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+
+}
+.formLayout button{
+    position: relative;
+    left: 40px;
+    margin-top: 10px;
+}
+.formLayout label, .formLayout input
+{
+    display: block;
+    float:left;
+    margin-bottom: 10px;
+    height: 20px;
+}
+.formLayout input
+{
+    width: 250px;
+
+}
+
+.formLayout label
+{
+    text-align: right;
+    padding-right: 10px;
+    width: 150px;
+}
+
+br
+{
+    clear: left;
+}
+*{
+    box-sizing: border-box;
+}
+sup
+{
+    color:red;
+    font-size:14px;
+}

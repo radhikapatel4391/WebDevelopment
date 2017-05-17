@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<title>MovingText</title>
+<script>
+var t = 0;
+var l = 0;
+var id;
+
+function startMove ()
+{
+	
+	var elem = document.getElementById("movingText");
+	id = setInterval(frame,100);
+	
+	
+	function frame()
+	{		
+			var hrm = document.getElementById("moveH").checked;
+			
+			if(hrm)
+			{
+				elem.style.left = l + 'px';
+				l++;
+				if (l == 420)
+				{
+					l = 0;
+					//clearInterval(id);
+				}
+			}
+			else
+			{	//console.log(t);
+				elem.style.top = t + 'px';
+				t++;
+				if (t == 180)
+				{
+					t = 0;
+					//clearInterval(id);
+				}
+			}
+	}
+}
+function stopMove ()
+{
+	clearInterval(id);
+}
+function reSet ()
+{	
+	var elem = document.getElementById("movingText");
+	t=0;
+	l=0;
+	elem.style.top = "0px";
+	elem.style.left = "1px";
+	clearInterval(id);
+
+}
+
+</script>
+<style>
+	body
+	{
+		padding-top:50px;
+	}
+	
+	label
+	{
+		font-size:"18px";
+		color:"red";
+	}
+	
+	.button
+	{
+		width:80px !important;
+	}
+	
+	.movingDivc
+	{
+		border: solid black 1px;
+		width: 500px;
+		height: 200px;
+		position: relative;
+		
+		
+	}
+	.movingTextc
+	{	
+		width: 80px;
+		height: 20px;
+		
+		position: absolute;
+		top : 0px;
+		left : 0px;
+	}
+	.centerDiv
+	{
+		margin: auto;
+		width: 90%;
+		padding: 10px;
+	}
+	.centerDivh
+	{
+		margin: auto;
+		width: 70%;
+		padding: 10px;
+	}
+	.btnSpace
+	{
+		word-spacing: 40px;
+	}
+	
+
+</style>
+
+</head>
+<body>
+<div class="container">
+	<form class="form-horizontal" role="form">
+		<div class="row movingDivc" id="movingDiv">
+			<div class="movingTextc" id="movingText">RADHIKA</div>
+		</div>
+		<br/>
+		<br/>
+
+		<div class="row btnSpace centerDiv">
+			<input class="button" type="button" value="start" id="start" onclick="startMove()"/>
+			<input class="button" type="button" value="stop" id="stop" onclick="stopMove()"/>
+			<input class="button" type="button" value="Reset" id="reset" onclick="reSet()"/>
+		</div>
+		<br/>
+
+		<div class="row">
+		<div class="centerDivh">
+			<input type="checkbox" value="moveH" name="moveH" id="moveH"> Move Horizontal
+			</div>
+		</div>
+
+		
+	</form>
+</div>
+</body>
+</html>

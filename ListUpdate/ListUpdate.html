@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>List Update</title>
+<style>
+ul li:before
+{
+    content: '\002A';
+    margin: 0 1em;    /* any design */
+}
+</style>
+
+<script>
+function addValue()
+{
+	var tvalue= document.getElementById("text1").value;
+	if(tvalue == "")
+	{
+		alert('Please enter value.');
+	}
+	else
+	{
+		var list = document.getElementById("list");
+		var pelement = document.getElementById("list");
+
+		var childelement = document.createElement("li");
+		var listtext=document.createTextNode(tvalue);
+		
+		childelement.appendChild(listtext);
+		pelement.appendChild(childelement);
+		
+		document.getElementById("text1").value = "";
+	}
+}
+</script>
+</head>
+<body>
+<br/>
+Enter Value:
+<input  type="text" id="text1" name="text1">
+<input  type="button" name="addbutton" id="addButton" value="ADD" onclick="addValue()">
+<ul id="list" style="list-style-type:none;">
+</ul>
+</body>
+</html>
